@@ -1,0 +1,113 @@
+<BS><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksamen nedtelling</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Nedtelling til eksamen</h1>
+
+    <h2 id="KJE101"></h2>
+    <h2 id="MAT100"></h2>
+    <h2 id="FYS102"></h2>
+    <h2 id="DAT120"></h2>
+  </body>
+</html>
+
+<style>
+  body {
+    text-align: center;
+  }
+
+  body h1 {
+    font-size: 7vw;
+  }
+
+  body h2 {
+    font-size: 5vw;
+  }
+</style>
+
+<script>
+  let kje = document.getElementById("KJE101")
+  let mat = document.getElementById("MAT100")
+  let fys = document.getElementById("FYS102")
+  let dat = document.getElementById("DAT120")
+
+  var countDownDateKje = new Date("Nov 22, 2023 09:00:00").getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDateKje - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    kje.innerHTML = "KJE102 - "+ days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    if (distance < 0) {
+      clearInterval(x);
+      kje.innerHTML = "KJE102 - FERDIG";
+    }
+  }, 1000);
+
+
+  var countDownDateMat = new Date("Nov 29, 2023 09:00:00").getTime();
+  var x1 = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDateMat - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    mat.innerHTML = "MAT100 - "+ days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    if (distance < 0) {
+      clearInterval(x1);
+      mat.innerHTML = "MAT100 - FERDIG";
+    }
+  }, 1000);
+
+
+  var countDownDateFys = new Date("Dec 06, 2023 09:00:00").getTime();
+  var x2 = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDateFys - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    fys.innerHTML = "FYS102 - "+ days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    if (distance < 0) {
+      clearInterval(x2);
+      fys.innerHTML = "FYS102 - FERDIG";
+    }
+  }, 1000);
+
+
+  var countDownDateDat = new Date("Dec 13, 2023 09:00:00").getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDateDat - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    dat.innerHTML = "DAT120 - "+ days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    if (distance < 0) {
+      clearInterval(x);
+      dat.innerHTML = "DAT120 - FERDIG";
+    }
+  }, 1000);
+</script>
